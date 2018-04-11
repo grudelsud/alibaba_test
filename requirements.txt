@@ -1,1 +1,3 @@
 oss2==2.4.0
+-e git+ssh://git@github.com/grudelsud/mns_python_sdk@develop#egg=mns
+

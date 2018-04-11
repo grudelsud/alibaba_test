@@ -19,11 +19,14 @@ LOGGING = {
 
 logging.config.dictConfig(LOGGING)
 
-CLOUD_ENDPOINT = 'https://oss-cn-beijing.aliyuncs.com'
+ALI_ACCESSKEYID = os.getenv('ALI_ACCESSKEYID')
+ALI_ACCESSKEYSECRET = os.getenv('ALI_ACCESSKEYSECRET')
+ALI_ACCOUNTID = os.getenv('ALI_ACCOUNTID')
 
 BUCKET_NAME = 'droparea'
+OSS_ENDPOINT = 'https://oss-cn-beijing.aliyuncs.com'
 
-ALIBABA_ACCESSKEYID = os.getenv('ALIBABA_ACCESSKEYID')
-ALIBABA_ACCESSKEYSECRET = os.getenv('ALIBABA_ACCESSKEYSECRET')
+MNS_ENDPOINT = f'https://{ALI_ACCOUNTID}.mns.cn-beijing.aliyuncs.com/'
 
 PATH_TEST01 = 'test01/messages'
+QUEUE_TEST01 = 'test01'
