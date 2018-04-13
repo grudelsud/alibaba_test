@@ -83,14 +83,14 @@ def run_consume():
             q.delete_message(recv_msg.receipt_handle)
             sys.stdout.write("Delete Message Succeed.\n\n")
 
-        except MNSExceptionBase, e:
+        except MNSExceptionBase as e:
             sys.stderr.write("Receive Message Fail!\nException:%s\n\n" % e)
             break
 
     try:
         q.delete()
         sys.stdout.write("Delete Queue Succeed!\n\n")
-    except MNSExceptionBase, e:
+    except MNSExceptionBase as e:
         sys.stderr.write("Delete Queue Fail!\nException:%s\n\n" % e)
         sys.exit(1)
 

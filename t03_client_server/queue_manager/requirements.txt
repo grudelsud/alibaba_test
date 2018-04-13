@@ -1,0 +1,3 @@
+# python2!
+../../mns_python_sdk
+pyzmq==17.0.0

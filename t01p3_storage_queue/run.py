@@ -1,6 +1,6 @@
 import argparse
 
-from t01_storage_queue.runner import create_queue, upload_notify, upload_download
+from blah.runner import create_queue, upload_notify, upload_download
 
 def get_parser():
     parser = argparse.ArgumentParser()
