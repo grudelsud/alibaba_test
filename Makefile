@@ -1,4 +1,4 @@
-DOCKER_IMAGE = alibaba_test
+DOCKER_IMAGE = grudelsud/alibaba_test
 DOCKER_CONTAINER = alibaba_test_container
 
 help:

@@ -14,6 +14,18 @@ def create_queue():
     mqu.create_queue(QUEUE_TEST01)
 
 
+def queue_notify(n=100):
+    mqu = MessageQueueUtils()
+
+    for i in range(n):
+        data = {
+            'message': 'message notification',
+            'created': datetime.now().isoformat(),
+        }
+        logger.info(f'sending message {i}')
+        mqu.send_msg(QUEUE_TEST01, json.dumps(data))
+
+
 def upload_notify():
     su = StorageUtils(BUCKET_NAME)
     mqu = MessageQueueUtils()

@@ -1,10 +1,21 @@
 import argparse
 
-from blah.runner import create_queue, upload_notify, receive_download, upload_download, longpoll
+from blah.runner import (
+    create_queue,
+    upload_notify,
+    queue_notify,
+    receive_download,
+    upload_download,
+    longpoll)
+
 
 def get_parser():
     parser = argparse.ArgumentParser()
     group = parser.add_mutually_exclusive_group()
+    group.add_argument(
+        '--notify',
+        action='store_true',
+        help='send simple messages to the queue')
     group.add_argument(
         '--longpoll',
         action='store_true',
@@ -16,7 +27,7 @@ def get_parser():
     group.add_argument(
         '--consume',
         action='store_true',
-        help='read messages from queues, download files specified in msg body')
+        help='read messages from queue, download files specified in msg body by --produce')
     group.add_argument(
         '--updown',
         action='store_true',
@@ -26,6 +37,10 @@ def get_parser():
 
 def run_up_down():
     upload_download()
+
+
+def run_notify():
+    queue_notify()
 
 
 def run_produce():
@@ -51,5 +66,7 @@ if __name__ == '__main__':
         run_up_down()
     elif args.longpoll:
         run_longpoll()
+    elif args.notify:
+        run_notify()
     else:
         parser.print_help()
