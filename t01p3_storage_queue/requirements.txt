@@ -1,3 +1,6 @@
 oss2==2.4.0
--e git+ssh://git@github.com/grudelsud/mns_python_sdk@develop#egg=mns
+# tried a 2to3 of the old sdk, but doesn't really work
+# -e git+ssh://git@github.com/grudelsud/mns_python_sdk@develop#egg=mns
 
+# here's the beta sdk for python 3.0+
+../dysms_python/mns_python_sdk

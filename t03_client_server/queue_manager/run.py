@@ -45,6 +45,7 @@ def delete_queue(queue):
 
 def produce_consume_die():
     # the MNS account and queue
+    print("Connecting to the ALI account and queue {}".format(MNS_ENDPOINT))
     account = Account(MNS_ENDPOINT, ALI_ACCESSKEYID, ALI_ACCESSKEYSECRET)
     q = create_queue(account)
 

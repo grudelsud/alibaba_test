@@ -1,6 +1,6 @@
 import argparse
 
-from blah.runner import create_queue, upload_notify, upload_download
+from blah.runner import create_queue, upload_notify, receive_download, upload_download
 
 def get_parser():
     parser = argparse.ArgumentParser()
@@ -30,7 +30,7 @@ def run_produce():
 
 
 def run_consume():
-    print('wip')
+    receive_download()
 
 
 if __name__ == '__main__':

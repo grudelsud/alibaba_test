@@ -1,7 +1,7 @@
 import logging
 import oss2
-from mns.account import Account
-from mns.queue import QueueMeta, MNSExceptionBase, Message
+from mns.mns_account import Account
+from mns.mns_queue import QueueMeta, MNSExceptionBase, Message
 
 from ..settings import (
     ALI_ACCESSKEYID,
@@ -63,6 +63,7 @@ class MessageQueueUtils:
                 logger.info(f'q {queue_name} is empty')
             else:
                 logger.error(f'cannot receive msg: {e}')
+            return None
         else:
             if delete:
                 try:
