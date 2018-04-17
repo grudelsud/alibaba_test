@@ -29,4 +29,4 @@ OSS_ENDPOINT = 'https://oss-cn-beijing.aliyuncs.com'
 MNS_ENDPOINT = f'https://{ALI_ACCOUNTID}.mns.cn-beijing.aliyuncs.com/'
 
 PATH_TEST01 = 'test01/messages'
-QUEUE_TEST01 = 'test01'
+QUEUE_TEST01 = os.getenv('QUEUE_TEST01', 'test01')
